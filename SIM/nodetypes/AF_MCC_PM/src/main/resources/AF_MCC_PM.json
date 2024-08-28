@@ -1,0 +1,41 @@
+{
+  "name": "AF_MCC_PM",
+  "internal": true,
+  "baseType": "SftpNode",
+  "properties": [
+    {
+      "name": "remoteDirectory",
+      "required": true,
+      "type": {
+        "type": "string",
+        "defaultString": "/opt/Affirmed/NMS/server/ems/data/pm/"
+      }
+    },
+    {
+      "name": "parentDirPattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ".*",
+        "regex": true
+      }
+    },
+    {
+      "name": "namePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "(.*)-[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}.csv$",
+        "regex": true
+      }
+    },
+    {
+      "name": "destinationDirectory",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "/eniq/data/pmdata_sim/eniq_affirmed_1/aquitas_ps/"
+      }
+    }
+  ]
+}

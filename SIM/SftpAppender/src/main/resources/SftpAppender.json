@@ -1,0 +1,33 @@
+{
+  "name": "SftpAppender",
+  "internal": true,
+  "baseType": "SftpNode",
+  "properties": [
+    {
+      "name": "appendToFile",
+      "required": false,
+      "type": {
+        "type": "boolean",
+        "defaultString": "true"
+      }
+    },
+    {
+      "name": "appendRetries",
+      "required": false,
+      "type": {
+        "type": "integer",
+        "defaultValue": 3,
+        "minValue": 0,
+        "maxValue": 1440
+      }
+    },
+    {
+      "name": "finishDelimiter",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "\n"
+      }
+    }
+  ]
+}

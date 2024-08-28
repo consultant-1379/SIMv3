@@ -1,0 +1,17 @@
+<!--See:https://maven.apache.org/plugins/maven-assembly-plugin/component.html-->
+
+<assembly>
+    ${...}
+    <id>assemble</id>
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <fileSet>
+<!--            <directory>../#build/${artifactId}/</directory>-->
+            <directory>../#build/${project.parent.artifactId}/</directory>
+            <outputDirectory>${project.parent.artifactId}/</outputDirectory>
+        </fileSet>
+    </fileSets>
+</assembly>

@@ -1,0 +1,57 @@
+{
+  "name": "OCC_CNT_PM",
+  "internal": true,
+  "baseType": "SftpNode",
+  "properties": [
+    {
+      "name": "sftpKeyFile",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ""
+      }
+    },
+    {
+      "name": "remoteDirectory",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "/opt/occ/var/performance/pm3gppXml/"
+      }
+    },
+    {
+      "name": "namePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ".*.xml",
+        "regex": true
+      }
+    },
+    {
+      "name": "renamePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "%IP_ADDRESS%-%HASH_CODE%_%R_FILE_NAME%",
+        "regex": false
+      }
+    },
+    {
+      "name": "destinationDirectory",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "/eniq/data/pmdata_sim/eniq_oss_1/dc_e_occ_counters/OCCCounters/"
+      }
+    },
+    {
+      "name": "localCleanup",
+      "required": false,
+      "type": {
+        "type": "boolean",
+        "defaultString": "false"
+      }
+    }
+  ]
+}

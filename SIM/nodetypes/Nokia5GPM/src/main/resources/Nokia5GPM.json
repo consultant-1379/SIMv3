@@ -1,0 +1,57 @@
+{
+  "name": "Nokia5GPM",
+  "internal": true,
+  "baseType": "SftpNode",
+  "properties": [
+    {
+      "name": "sftpKeyFile",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ""
+      }
+    },
+    {
+      "name": "remoteDirectory",
+      "required": true,
+      "type": {
+        "type": "string",
+        "defaultString": "/xfer/eniq/syv/nokia/NokiaPM/vm14/NRBTS/"
+      }
+    },
+    {
+      "name": "parentDirPattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "^[0-9]{8}$",
+        "regex": true
+      }
+    },
+    {
+      "name": "namePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "^PM[0-9]+\\+[0-9]+.*\\.xml\\.gz",
+        "regex": true
+      }
+    },
+    {
+      "name": "destinationDirectory",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "/eniq/data/pmdata/eniq_nokia_2/dc_n_nrran_3gpp/dir1/"
+      }
+    },
+    {
+      "name": "localCleanup",
+      "required": false,
+      "type": {
+        "type": "boolean",
+        "defaultString": "false"
+      }
+    }
+  ]
+}

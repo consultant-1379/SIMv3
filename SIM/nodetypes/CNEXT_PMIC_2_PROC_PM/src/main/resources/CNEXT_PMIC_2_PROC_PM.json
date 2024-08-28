@@ -1,0 +1,57 @@
+{
+  "name": "CNEXT_PMIC_2_PROC_PM",
+  "internal": true,
+  "baseType": "SftpNode",
+  "properties": [
+    {
+      "name": "sftpKeyFile",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ""
+      }
+    },
+    {
+      "name": "remoteDirectory",
+      "required": true,
+      "type": {
+        "type": "string",
+        "defaultString": "/ericsson/pmic2/asn1/apg_sts_processed/"
+      }
+    },
+    {
+      "name": "parentDirPattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ".*",
+        "regex": true
+      }
+    },
+    {
+      "name": "namePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ".*G.*1050.*_statsfile.*",
+        "regex": true
+      }
+    },
+    {
+      "name": "destinationDirectory",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "/eniq/data/pmdata_sim/eniq_oss_2/dc_e_cnext/CNEXT"
+      }
+    },
+    {
+      "name": "localCleanup",
+      "required": false,
+      "type": {
+        "type": "boolean",
+        "defaultString": "false"
+      }
+    }
+  ]
+}

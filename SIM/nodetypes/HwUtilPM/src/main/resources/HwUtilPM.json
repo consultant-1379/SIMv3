@@ -1,0 +1,48 @@
+{
+  "name": "HwUtilPM",
+  "internal": true,
+  "baseType": "SftpNode",
+  "properties": [
+    {
+      "name": "sftpKeyFile",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ""
+      }
+    },
+    {
+      "name": "remoteDirectory",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "/var/opt/ericsson/eniqpc/"
+      }
+    },
+    {
+      "name": "namePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ".*.stat$",
+        "regex": true
+      }
+    },
+    {
+      "name": "destinationDirectory",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "/eniq/data/pmdata_sim/eniq_oss_4/dc_x_hwutil/HU/"
+      }
+    },
+    {
+      "name": "localCleanup",
+      "required": false,
+      "type": {
+        "type": "boolean",
+        "defaultString": "false"
+      }
+    }
+  ]
+}

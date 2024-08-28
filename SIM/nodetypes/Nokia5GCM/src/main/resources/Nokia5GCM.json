@@ -1,0 +1,73 @@
+{
+  "name": "Nokia5GCM",
+  "internal": true,
+  "baseType": "SftpNode",
+  "properties": [
+    {
+      "name": "sftpKeyFile",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ""
+      }
+    },
+    {
+      "name": "remoteDirectory",
+      "required": true,
+      "type": {
+        "type": "string",
+        "defaultString": "/xfer/eniq/syv/nokia/NokiaCM/"
+      }
+    },
+    {
+      "name": "parentDirPattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "^[0-9]{8}$",
+        "regex": true
+      }
+    },
+    {
+      "name": "namePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "^syv-rac-export-all-content_[0-9]{12}\\.xml\\.gz$",
+        "regex": true
+      }
+    },
+    {
+      "name": "destinationDirectory",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "/eniq/data/pmdata_sim/eniq_nokia_2/cm_staging"
+      }
+    },
+    {
+      "name": "cronBasedRop",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "30 1 * * *"
+      }
+    },
+    {
+      "name": "copyTo",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "/eniq/data/pmdata_sim/eniq_nokia_2/dc_n_cm_cmnrn_raml/dir1;/eniq/data/pmdata_sim/eniq_nokia_2/dim_n_cmn_raml/dir1;/eniq/data/pmdata_sim/eniq_nokia_2/dim_n_nrran_raml/dir1;/eniq/data/pmdata_sim/eniq_nokia_2/dim_n_lte_raml/dir1"
+      }
+    },
+    {
+      "name": "localCleanup",
+      "required": false,
+      "type": {
+        "type": "boolean",
+        "defaultString": "false"
+      }
+    }
+  ]
+}

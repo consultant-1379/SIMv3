@@ -1,0 +1,229 @@
+{
+  "name": "SftpNode",
+  "internal": true,
+  "baseType": "Node",
+  "properties": [
+    {
+      "name": "sftpPort",
+      "required": false,
+      "type": {
+        "type": "integer",
+        "defaultValue": 22,
+        "minValue": 1,
+        "maxValue": 65535
+      }
+    },
+    {
+      "name": "sftpUserName",
+      "required": true,
+      "type": {
+        "type": "string",
+        "defaultString": ""
+      }
+    },
+    {
+      "name": "sftpKeyFile",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ""
+      }
+    },
+    {
+      "name": "sftpUserPass",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ""
+      }
+    },
+    {
+      "name": "sftpRetries",
+      "required": false,
+      "type": {
+        "type": "integer",
+        "defaultValue": 0,
+        "minValue": 0,
+        "maxValue": 100
+      }
+    },
+    {
+      "name": "remoteDirectory",
+      "required": true,
+      "type": {
+        "type": "string",
+        "defaultString": "./"
+      }
+    },
+    {
+      "name": "namePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ".*",
+        "regex": true
+      }
+    },
+    {
+      "name": "renamePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "",
+        "regex": false
+      }
+    },
+    {
+      "name": "destinationDirectory",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "./"
+      }
+    },
+    {
+      "name": "maxSftpConnections",
+      "required": false,
+      "type": {
+        "type": "integer",
+        "defaultValue": 5,
+        "minValue": 0,
+        "maxValue": 100
+      }
+    },
+    {
+      "name": "startRopDateGroupId",
+      "required": false,
+      "type": {
+        "type": "integer",
+        "defaultValue": -1
+      }
+    },
+    {
+      "name": "startRopDatePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "",
+        "datetime": true
+      }
+    },
+    {
+      "name": "stopRopDateGroupId",
+      "required": false,
+      "type": {
+        "type": "integer",
+        "defaultValue": -1
+      }
+    },
+    {
+      "name": "stopRopDatePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "",
+        "datetime": true
+      }
+    },
+    {
+      "name": "startRopTimeGroupId",
+      "required": false,
+      "type": {
+        "type": "integer",
+        "defaultValue": -1
+      }
+    },
+    {
+      "name": "startRopTimePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "",
+        "datetime": true
+      }
+    },
+    {
+      "name": "stopRopTimeGroupId",
+      "required": false,
+      "type": {
+        "type": "integer",
+        "defaultValue": -1
+      }
+    },
+    {
+      "name": "stopRopTimePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "",
+        "datetime": true
+      }
+    },
+    {
+      "name": "lookbackTime",
+      "required": false,
+      "type": {
+        "type": "integer",
+        "defaultValue": 1440
+      }
+    },
+    {
+      "name": "copyTo",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ""
+      }
+    },
+    {
+      "name": "localCleanup",
+      "required": false,
+      "type": {
+        "type": "boolean",
+        "defaultString": "false"
+      }
+    },
+    {
+      "name": "prependId",
+      "required": false,
+      "type": {
+        "type": "boolean",
+        "defaultString": "false"
+      }
+    },
+    {
+      "name": "appendId",
+      "required": false,
+      "type": {
+        "type": "boolean",
+        "defaultString": "false"
+      }
+    },
+    {
+      "name": "ignoreHistory",
+      "required": false,
+      "type": {
+        "type": "boolean",
+        "defaultString": "false"
+      }
+    },
+    {
+      "name": "replaceRopStartPattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "yyyyMMdd-HHmm",
+        "datetime": true
+      }
+    },
+    {
+      "name": "replaceRopEndPattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "yyyyMMdd-HHmm",
+        "datetime": true
+      }
+    }
+  ]
+}

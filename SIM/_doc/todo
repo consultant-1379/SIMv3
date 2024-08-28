@@ -1,0 +1,6 @@
+1- Way to skip history backlog and just fetch files to avoid being stuck with history for long time
+2- Way to fetch (through a CLI or other utiliy) a specific time data i.e. between 1 hour yesterday etc
+3- Way to provide specific cron schedules rather then rop
+4- Post process files (unzip, rezip etc)
+5- Rename file after transfer
+6- Make sure logs can be configured dynamically

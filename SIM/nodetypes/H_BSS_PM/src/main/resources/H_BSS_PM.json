@@ -1,0 +1,41 @@
+{
+  "name": "H_BSS_PM",
+  "internal": true,
+  "baseType": "SftpNode",
+  "properties": [
+    {
+      "name": "remoteDirectory",
+      "required": true,
+      "type": {
+        "type": "string",
+        "defaultString": "/eniq/syv/incoming/shared/NBI_PM/pmneexport/gran/"
+      }
+    },
+    {
+      "name": "parentDirPattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "^[0-9]{8}$",
+        "regex": true
+      }
+    },
+    {
+      "name": "namePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "^A.*.xml$",
+        "regex": true
+      }
+    },
+    {
+      "name": "destinationDirectory",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "/eniq/data/pmdata_sim/eniq_oss_1/dc_h_bss_xml/"
+      }
+    }
+  ]
+}

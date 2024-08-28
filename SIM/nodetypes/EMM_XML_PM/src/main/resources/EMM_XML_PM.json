@@ -1,0 +1,57 @@
+{
+  "name": "EMM_XML_PM",
+  "internal": true,
+  "baseType": "SftpNode",
+  "properties": [
+    {
+      "name": "sftpKeyFile",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ""
+      }
+    },
+    {
+      "name": "remoteDirectory",
+      "required": true,
+      "type": {
+        "type": "string",
+        "defaultString": "/var/opt/mediation/MMStorage/Manager/CXC1734738_R11N/performancemonitor/"
+      }
+    },
+    {
+      "name": "namePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "C.*",
+        "regex": true
+      }
+    },
+    {
+      "name": "renamePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "%IP_ADDRESS%-%HASH_CODE%_%R_FILE_NAME%",
+        "regex": false
+      }
+    },
+    {
+      "name": "destinationDirectory",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "/eniq/data/pmdata_sim/eniq_oss_1/dc_e_emm_xml/1/"
+      }
+    },
+    {
+      "name": "localCleanup",
+      "required": false,
+      "type": {
+        "type": "boolean",
+        "defaultString": "false"
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN" monitorInterval="15">
+
+    <properties>
+        <property name="LOG_HOME">${sys:user.dir}/logs/</property>
+        <property name="APPLICATION_FILE_NAME">SIM</property>
+        <property name="log.level.runtime">INFO</property>
+        <property name="log.level.console">OFF</property>
+
+    </properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <ThresholdFilter level="${log.level.console}" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %C{0}.%M: %msg%n"/>
+        </Console>
+
+        <RollingRandomAccessFile name="INFO_FILE"
+                                 fileName="${LOG_HOME}/${APPLICATION_FILE_NAME}_log.log"
+                                 filePattern="${LOG_HOME}/${APPLICATION_FILE_NAME}_log.%i.log">
+            <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %C{0}.%M: %msg%n"/>
+            <Filters>
+                <ThresholdFilter level="${log.level.runtime}" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <Policies>
+                <!--                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>-->
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="3"/>
+        </RollingRandomAccessFile>
+        <RollingRandomAccessFile name="ERROR_FILE"
+                                 fileName="${LOG_HOME}/${APPLICATION_FILE_NAME}_error.log"
+                                 filePattern="${LOG_HOME}/${APPLICATION_FILE_NAME}_error.%i.log">
+            <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %C{0}.%M: %msg%n"/>
+            <Filters>
+                <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <Policies>
+                <!--                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>-->
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="3"/>
+        </RollingRandomAccessFile>
+    </Appenders>
+
+    <Loggers>
+        <logger name="com.ericsson" additivity="true" level="${log.level.runtime}">
+            <AppenderRef ref="INFO_FILE"/>
+            <AppenderRef ref="ERROR_FILE"/>
+        </logger>
+
+        <logger name="org.quartz" additivity="true" level="WARN">
+            <AppenderRef ref="INFO_FILE"/>
+        </logger>
+
+        <Root level="${log.level.console}">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</configuration>

@@ -1,0 +1,40 @@
+{
+  "name": "HuaweiCM",
+  "internal": true,
+  "baseType": "SftpNode",
+  "properties": [
+    {
+      "name": "remoteDirectory",
+      "required": true,
+      "type": {
+        "type": "string",
+        "defaultString": "/export/home/sysm/opt/oss/server/var/fileint/cm/autoExport/"
+      }
+    },
+    {
+      "name": "namePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "^CMExport_.*.xml.gz$",
+        "regex": true
+      }
+    },
+    {
+      "name": "destinationDirectory",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "/eniq/data/pmdata/eniq_oss_1/topology_som/1/"
+      }
+    },
+    {
+      "name": "cronBasedRop",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "30 6 * * *"
+      }
+    }
+  ]
+}

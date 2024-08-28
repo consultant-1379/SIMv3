@@ -1,0 +1,57 @@
+{
+  "name": "SDP_PM",
+  "internal": true,
+  "baseType": "SftpNode",
+  "properties": [
+    {
+      "name": "sftpKeyFile",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ""
+      }
+    },
+    {
+      "name": "remoteDirectory",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "/var/opt/fds/statistics/"
+      }
+    },
+    {
+      "name": "namePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ".*PSC.*stat",
+        "regex": true
+      }
+    },
+    {
+      "name": "renamePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "%IP_ADDRESS%-%HASH_CODE%_%R_FILE_NAME%",
+        "regex": false
+      }
+    },
+    {
+      "name": "destinationDirectory",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "/eniq/data/pmdata_sim/eniq_oss_1/dc_e_cs_sdp/SDP/"
+      }
+    },
+    {
+      "name": "localCleanup",
+      "required": false,
+      "type": {
+        "type": "boolean",
+        "defaultString": "false"
+      }
+    }
+  ]
+}

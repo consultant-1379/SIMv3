@@ -1,0 +1,22 @@
+{
+  "paths": {
+    "privateKey": "/eniq/home/dcuser/.ssh/id_rsa"
+  },
+  "threadPool": {
+    "minSize": 1000,
+    "maxSize": 1000,
+    "idleTimeout": 60,
+    "awaitTermination": 15
+  },
+  "rmi": {
+    "serverName": "SIM_RMI_",
+    "registryPort": 1879
+  },
+  "scheduler": {
+    "ignoreMissfire": true
+  },
+  "jobs": {
+    "batchSize": 1000,
+    "windDownTime": 45
+  }
+}

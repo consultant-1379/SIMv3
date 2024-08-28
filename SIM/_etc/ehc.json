@@ -1,0 +1,10 @@
+{
+  "dataLocation": "/eniq/data/pmdata_sim/",
+  "maxPercentageUsedSpace": 80,
+  "checkEniqStatus": true,
+  "checkAfter": 60,
+  "engineCheckCommand": "/eniq/sw/bin/engine",
+  "engineCheckCommandArgsList": [
+    "status"
+  ]
+}

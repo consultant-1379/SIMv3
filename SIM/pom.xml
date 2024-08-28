@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ericsson.sim</groupId>
+    <artifactId>SIM</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+    <modules>
+        <!-- Internal libraries module -->
+        <module>Interface</module>
+        <module>Common</module>
+        <module>Engine</module>
+        <module>SftpProtocol</module>
+        <module>EniqPolicy</module>
+        <module>Cli</module>
+
+        <!-- Node types base types -->
+        <module>Node</module>
+        <module>SftpNode</module>
+        <module>SftpAppender</module>
+        <module>CsvAppender</module>
+
+        <!-- Node type modules -->
+        <!--        <module>nodetypes/Nokia5GPM</module>-->
+        <!--        <module>nodetypes/Nokia5GCM</module>-->
+        <!--        <module>nodetypes/NokiaPM</module>-->
+        <!--        <module>nodetypes/NokiaCM</module>-->
+        <!--        <module>nodetypes/HuaweiCM</module>-->
+        <!--        <module>nodetypes/HuaweiPM</module>-->
+        <!--        <module>nodetypes/TMA_PM</module>-->
+
+        <!-- MRD 64246 node types -->
+        <!--        <module>nodetypes/CCN_CNT_PM</module>-->
+        <!--        <module>nodetypes/CCN_CBA_PM</module>-->
+        <!--        <module>nodetypes/CCN_JOB_PM</module>-->
+        <!--        <module>nodetypes/HwUtilPM</module>-->
+        <!--        <module>nodetypes/AIR_PM</module>-->
+        <!--        <module>nodetypes/SDP_PM</module>-->
+        <!--        <module>nodetypes/NGVS_PM</module>-->
+        <!--        <module>nodetypes/EMM_XML_PM</module>-->
+        <!--        <module>nodetypes/EMM_FE_PM</module>-->
+        <!--        <module>nodetypes/EM_XML_PM</module>-->
+        <!--        <module>nodetypes/CEE_PM</module>-->
+        <!--        <module>nodetypes/OCC_CNT_PM</module>-->
+        <!--        <module>nodetypes/OCC_MET_PM</module>-->
+        <!--        <module>nodetypes/OCC_INF_PM</module>-->
+        <!--        <module>nodetypes/HXC_SRV_PM</module>-->
+        <!--        <module>nodetypes/HXC_TOT_PM</module>-->
+        <!-- - - - - END - - - - -->
+
+        <!-- MRD 66651 node types -->
+        <!--        <module>nodetypes/ECE_JVM_PM</module>-->
+        <!--        <module>nodetypes/ECE_NP_PM</module>-->
+        <!--        <module>nodetypes/ECE_SNA_PM</module>-->
+        <!--        <module>nodetypes/CSS_JVM_PM</module>-->
+        <!--        <module>nodetypes/CSS_NP_PM</module>-->
+        <!--        <module>nodetypes/CSS_SNA_PM</module>-->
+        <!-- - - - - END - - - - -->
+
+        <!-- MRD 66764 node types -->
+        <!--        <module>nodetypes/CNEXT_PMIC_1_PROC_PM</module>-->
+        <!--        <module>nodetypes/CNEXT_PMIC_2_PROC_PM</module>-->
+        <!--        <module>nodetypes/CNEXT_PMIC_1_RAW_PM</module>-->
+        <!--        <module>nodetypes/CNEXT_PMIC_2_RAW_PM</module>-->
+        <!-- - - - - END - - - - -->
+
+        <!-- MRD 66904 node types -->
+        <!--        <module>nodetypes/CNEXT_EQ_1_PROC_PM</module>-->
+        <!--        <module>nodetypes/CNEXT_EQ_2_PROC_PM</module>-->
+        <!-- - - - - END - - - - -->
+        <!-- MRD 65204 node types -->
+                <!-- <module>nodetypes/AF_MCC_PM</module>
+                <module>nodetypes/AF_MME_PM</module>
+                <module>nodetypes/H_BSS_PM</module>
+                <module>nodetypes/H_LTE_PM</module>
+                <module>nodetypes/H_RAN_PM</module>
+                <module>nodetypes/H_RAN_CM</module> -->
+        <!-- - - - - END - - - - -->
+        <!--CAFOP-1906 node types -->
+                <module>nodetypes/OCC_CNT_PM</module>
+                <module>nodetypes/OCC_MET_PM</module>
+                <module>nodetypes/OCC_INF_PM</module>
+                <module>nodetypes/AIR_PM</module>
+                <module>nodetypes/SDP_PM</module>
+                <module>nodetypes/NGVS_PM</module>
+                <module>nodetypes/CCN_CNT_PM</module>
+                <module>nodetypes/CCN_CBA_PM</module>
+                <module>nodetypes/CCN_JOB_PM</module>
+                <module>nodetypes/HwUtilPM</module>
+                <module>nodetypes/EM_XML_PM</module>
+                <module>nodetypes/EMMOM_CountersNew_Plugin</module>
+                <module>nodetypes/EMM_FE_Plugin</module>
+        <!-- - - - - END - - - - -->
+
+        <!-- Packaging module. This stays at the end -->
+        <module>SIM_CXP1234567</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>2.17.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>2.17.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>2.8.7</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-pool</groupId>
+                <artifactId>commons-pool</artifactId>
+                <version>1.6</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+
+        <plugins>
+            <!--            <plugin>-->
+            <!--                <groupId>org.apache.maven.plugins</groupId>-->
+            <!--                <artifactId>maven-clean-plugin</artifactId>-->
+            <!--                <inherited>true</inherited>-->
+            <!--                <version>3.1.0</version>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <id>clean-pkg</id>-->
+            <!--                        <phase>initialize</phase>-->
+            <!--&lt;!&ndash;                        <goals>&ndash;&gt;-->
+            <!--&lt;!&ndash;                            <goal>clean</goal>&ndash;&gt;-->
+            <!--&lt;!&ndash;                        </goals>&ndash;&gt;-->
+            <!--                        <configuration>-->
+            <!--                            <filesets>-->
+            <!--                                <fileset>-->
+            <!--                                    <directory>${project.basedir}/#pkg/</directory>-->
+            <!--                                    <includes>-->
+            <!--                                        <include>**/*</include>-->
+            <!--                                    </includes>-->
+            <!--                                    <followSymlinks>false</followSymlinks>-->
+            <!--                                </fileset>-->
+            <!--                            </filesets>-->
+            <!--                        </configuration>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--            </plugin>-->
+
+
+            <!-- Clean up build directories -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.4.1</version>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>${project.basedir}/#build/${project.artifactId}/</directory>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <inherited>true</inherited>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+                <!--                <executions>-->
+                <!--                    <execution>-->
+                <!--                        <id>default-compile</id>-->
+                <!--                        <phase>compile</phase>-->
+                <!--                        <goals>-->
+                <!--                            <goal>compile</goal>-->
+                <!--                        </goals>-->
+                <!--                    </execution>-->
+                <!--                </executions>-->
+            </plugin>
+        </plugins>
+
+    </build>
+
+</project>

@@ -1,0 +1,139 @@
+{
+  "name": "Node",
+  "internal": true,
+  "baseType": null,
+  "properties": [
+    {
+      "name": "name",
+      "primary": true,
+      "required": true,
+      "type": {
+        "type": "string",
+        "regex": null
+      }
+    },
+    {
+      "name": "IPAddress",
+      "required": true,
+      "type": {
+        "type": "string",
+        "regex": "^((0|1\\d?\\d?|2[0-4]?\\d?|25[0-5]?|[3-9]\\d?)\\.){3}(0|1\\d?\\d?|2[0-4]?\\d?|25[0-5]?|[3-9]\\d?)$"
+      }
+    },
+    {
+      "name": "uniqueID",
+      "primary": true,
+      "required": false,
+      "type": {
+        "type": "string",
+        "regex": null,
+        "defaultString": ""
+      }
+    },
+    {
+      "name": "pluginNames",
+      "required": true,
+      "type": {
+        "type": "string",
+        "regex": null
+      }
+    },
+    {
+      "name": "rop",
+      "required": false,
+      "type": {
+        "type": "integer",
+        "defaultValue": 15,
+        "minValue": 0,
+        "maxValue": 60,
+        "validValues": [
+          5,
+          15,
+          30,
+          60
+        ]
+      }
+    },
+    {
+      "name": "Offset",
+      "required": false,
+      "type": {
+        "type": "integer",
+        "defaultValue": 0,
+        "minValue": 0,
+        "maxValue": 60
+      }
+    },
+    {
+      "name": "storageDays",
+      "required": false,
+      "type": {
+        "type": "integer",
+        "defaultValue": 0,
+        "minValue": 0,
+        "maxValue": 1000
+      }
+    },
+    {
+      "name": "moveTo",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "/var/tmp/"
+      }
+    },
+    {
+      "name": "deleteAction",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "",
+        "validStrings": [
+          "",
+          "IMMEDIATE",
+          "STORAGE_DAYS",
+          "MOVE"
+        ]
+      }
+    },
+    {
+      "name": "snmpCommunity",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ""
+      }
+    },
+    {
+      "name": "snmpVersion",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "",
+        "validStrings": [
+          "v1",
+          "v2",
+          "v3"
+        ]
+      }
+    },
+    {
+      "name": "snmpPort",
+      "required": false,
+      "type": {
+        "type": "integer",
+        "defaultValue": 161,
+        "minValue": 1,
+        "maxValue": 65535
+      }
+    },
+    {
+      "name": "destinationDirectory",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ""
+      }
+    }
+  ]
+}

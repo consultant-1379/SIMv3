@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>SIM</artifactId>
+        <groupId>com.ericsson.sim</groupId>
+        <version>1.0</version>
+    </parent>
+
+    <artifactId>SIM_CXP1234567</artifactId>
+    <!--    <artifactId>SIM</artifactId>-->
+    <modelVersion>4.0.0</modelVersion>
+    <version>3.0</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <!--        <cxp>CXP9028205</cxp>-->
+        <revision>R1A01</revision>
+        <!--        <package>${project.parent.artifactId}_${cxp}-${revision}</package>-->
+        <package>${project.parent.artifactId}-${version}</package>
+        <buildDir>${project.parent.basedir}/#build/${project.parent.artifactId}</buildDir>
+    </properties>
+
+    <build>
+        <plugins>
+            <!-- copy bin and etc to build directory-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources-bin</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${buildDir}/bin/</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.parent.basedir}/_bin/</directory>
+                                    <includes>
+                                        <include>**/*.*</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-resources-etc</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${buildDir}/etc/</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.parent.basedir}/_etc/</directory>
+                                    <includes>
+                                        <include>**/*.*</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-resources-lib</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/#build/${project.parent.artifactId}/lib/</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/lib/</directory>
+                                    <includes>
+                                        <include>**/*.*</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--            <plugin>-->
+            <!--                <groupId>com.soebes.maven.plugins</groupId>-->
+            <!--                <artifactId>echo-maven-plugin</artifactId>-->
+            <!--                <version>0.4.0</version>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <id>echo-first-time</id>-->
+            <!--                        <phase>validate</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>echo</goal>-->
+            <!--                        </goals>-->
+            <!--                        <configuration>-->
+            <!--                            <echos>-->
+            <!--                                <echo>Echo 1 ${project.basedir}</echo>-->
+            <!--                                <echo>Echo 1 ${project.parent.basedir}</echo>-->
+            <!--                            </echos>-->
+            <!--                        </configuration>-->
+            <!--                    </execution>-->
+            <!--                    <execution>-->
+            <!--                        <id>echo-info</id>-->
+            <!--                        <phase>prepare-package</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>echo</goal>-->
+            <!--                        </goals>-->
+            <!--                        <configuration>-->
+            <!--                            <echos>-->
+            <!--                                <echo>Echo 2 ${project.basedir}</echo>-->
+            <!--                                <echo>Echo 2 ${project.parent.basedir}</echo>-->
+            <!--                            </echos>-->
+            <!--                        </configuration>-->
+            <!--                    </execution>-->
+            <!--                    <execution>-->
+            <!--                        <id>echo-warning</id>-->
+            <!--                        <phase>prepare-package</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>echo</goal>-->
+            <!--                        </goals>-->
+            <!--                        <configuration>-->
+            <!--                            <logLevel>WARNING</logLevel>-->
+            <!--                            <echos>-->
+            <!--                                <echo>Echo 3 ${project.basedir}</echo>-->
+            <!--                                <echo>Echo 3 ${project.parent.basedir}</echo>-->
+            <!--                            </echos>-->
+            <!--                        </configuration>-->
+            <!--                    </execution>-->
+            <!--                    <execution>-->
+            <!--                        <id>echo-error</id>-->
+            <!--                        <phase>prepare-package</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>echo</goal>-->
+            <!--                        </goals>-->
+            <!--                        <configuration>-->
+            <!--                            <logLevel>ERROR</logLevel>-->
+            <!--                            <echos>-->
+            <!--                                <echo>Echo 4 ${project.basedir}</echo>-->
+            <!--                                <echo>Echo 4 ${project.parent.basedir}</echo>-->
+            <!--                            </echos>-->
+            <!--                        </configuration>-->
+            <!--                    </execution>-->
+            <!--                    <execution>-->
+            <!--                        <id>echo-debug</id>-->
+            <!--                        <phase>prepare-package</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>echo</goal>-->
+            <!--                        </goals>-->
+            <!--                        <configuration>-->
+            <!--                            <logLevel>DEBUG</logLevel>-->
+            <!--                            <echos>-->
+            <!--                                <echo>Echo 5 ${project.basedir}</echo>-->
+            <!--                                <echo>Echo 5 ${project.parent.basedir}</echo>-->
+            <!--                            </echos>-->
+            <!--                        </configuration>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--            </plugin>-->
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <inherited>false</inherited>
+                <configuration>
+                    <descriptors>
+                        <descriptor>${project.basedir}/assemble.xml</descriptor>
+                    </descriptors>
+                    <basedir>${project.parent.artifactId}</basedir>
+                    <outputDirectory>${project.parent.basedir}/#pkg/</outputDirectory>
+                    <finalName>${package}</finalName>
+                    <appendAssemblyId>false</appendAssemblyId>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+           <!--  <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-archiver</artifactId>
+                <configuration>
+                    <archive>
+                        <compress>true</compress>
+                        <forced>true</forced>
+                        <index>true</index>
+                        <fileSets>
+                            <fileSet>
+                                <directory>${project.parent.basedir}/#pkg/</directory>
+                                <includes>
+                                    <include>${package}</include>
+                                </includes>
+                                <outputDirectory>${project.parent.basedir}/#pkg/</outputDirectory>
+                            </fileSet>
+                        </fileSets>
+                        <addMavenDescriptor>false</addMavenDescriptor>
+                        <manifestEntries>
+                            <Password>123456</Password>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin> -->
+
+            <!--            <plugin>-->
+            <!--                <groupId>org.codehaus.gmaven</groupId>-->
+            <!--                <artifactId>gmaven-plugin</artifactId>-->
+            <!--                <version>1.3</version>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <id>set-custom-property</id>-->
+            <!--                        <phase>validate</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>execute</goal>-->
+            <!--                        </goals>-->
+            <!--                        <configuration>-->
+            <!--                            <source>-->
+            <!--                                project.properties.setProperty('main.basedir', project.parent.basedir.toString())-->
+            <!--                            </source>-->
+            <!--                        </configuration>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--            </plugin>-->
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.0.0</version>
+                <inherited>false</inherited>
+                <executions>
+                    <execution>
+                        <id>server-copy</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <!--                                <property name="host" value="atvts4114.athtem.eei.ericsson.se"/>-->
+                                <!--                                <property name="port" value="2251"/>-->
+                                <!-- atvts4114.athtem.eei.ericsson.se -->
+                                <!--                                <property name="host" value="10.45.192.158"/>-->
+                                <!--                                <property name="host" value="atvts4114.athtem.eei.ericsson.se"/>-->
+                                <!--                                <property name="port" value="2251"/>-->
+
+                                <!--                                <property name="host" value="ieatrcx4091.athtem.eei.ericsson.se"/>-->
+                                <!--                                <property name="port" value="22"/>-->
+                                <!--                                <property name="user" value="root"/>-->
+                                <!--                                <property name="pass" value="shroot12"/>-->
+
+                                <property name="host" value="10.40.36.36"/>
+                                <property name="port" value="22"/>
+                                <property name="user" value="root"/>
+                                <property name="pass" value="Q1neMadm"/>
+                                <property name="dest" value="/var/ericsson/"/>
+                                <property name="src" value="${package}.tar.gz"/>
+
+                                <echo message="Pushing ${src} to ${host}"/>
+                                <scp todir="${user}:${pass}@${host}:${dest}" port="${port}"
+                                     verbose="off"
+                                     sftp="true"
+                                     failonerror="true"
+                                     trust="true"
+                                     file="../#pkg/${src}"/>
+                                <sshexec host="${host}" port="${port}"
+                                         username="${user}" password="${pass}"
+                                         failonerror="true"
+                                         trust="true"
+                                         command="cd ${dest}; /usr/bin/cp SIM/etc/nodes.config .; tar -xvf ${src}; rm -rf ${src}; chmod 755 SIM/bin/start.sh; chmod 755 SIM/bin/stop.sh; chmod 755 SIM/bin/cli.sh; chmod 755 SIM/bin/install.sh; chmod 755 SIM/bin/diff.sh; chown -R dcuser:dc5000 SIM/"/>
+                            </target>
+                            <!--                            command="cd ${dest}; /usr/bin/cp SIM/etc/nodes.config .; tar -xvf ${src}; rm -rf ${src}; chmod 755 SIM/bin/start.sh; chmod 755 SIM/bin/stop.sh; chmod 755 SIM/bin/cli.sh; chmod 755 SIM/bin/install.sh; /usr/bin/cp nodes.config SIM/etc/; cd -; chown -R dcuser:dc5000 SIM/"/>-->
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.ant</groupId>
+                        <artifactId>ant-jsch</artifactId>
+                        <version>1.10.9</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.jcraft</groupId>
+                        <artifactId>jsch</artifactId>
+                        <version>0.1.55</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,75 @@
+{
+  "name": "CsvAppender",
+  "internal": true,
+  "baseType": "SftpAppender",
+  "properties": [
+    {
+      "name": "appendToCsv",
+      "required": false,
+      "type": {
+        "type": "boolean",
+        "defaultString": "true"
+      }
+    },
+    {
+      "name": "hasHeader",
+      "required": false,
+      "type": {
+        "type": "boolean",
+        "defaultString": "true"
+      }
+    },
+    {
+      "name": "csvDelimiter",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ","
+      }
+    },
+    {
+      "name": "csvDateHeaderIndex",
+      "required": false,
+      "type": {
+        "type": "integer",
+        "defaultValue": 0
+      }
+    },
+    {
+      "name": "csvDateHeaderFormat",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "yyyy-MM-dd-HHmm",
+        "datetime": true
+      }
+    },
+    {
+      "name": "renamePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "%UNIQUE_ID%-%CSV_ROP_START_DATETIME%-%CSV_ROP_END_DATETIME%.csv",
+        "regex": false
+      }
+    },
+    {
+      "name": "csvRopStartPattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "yyyyMMdd-HHmm",
+        "datetime": true
+      }
+    },
+    {
+      "name": "csvRopEndPattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "yyyyMMdd-HHmm",
+        "datetime": true
+      }
+    }
+  ]
+}

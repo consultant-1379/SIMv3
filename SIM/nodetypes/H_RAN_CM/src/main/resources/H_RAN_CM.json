@@ -1,0 +1,49 @@
+{
+  "name": "H_RAN_CM",
+  "internal": true,
+  "baseType": "SftpNode",
+  "properties": [
+    {
+      "name": "remoteDirectory",
+      "required": true,
+      "type": {
+        "type": "string",
+        "defaultString": "/eniq/syv/incoming/shared/NBI_CM/autoExport/"
+      }
+    },
+    {
+      "name": "parentDirPattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "^[0-9]{8}$",
+        "regex": true
+      }
+    },
+    {
+      "name": "cronBasedRop",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "30 0 * * *"
+      }
+    },
+    {
+      "name": "namePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "^CMExport.*.xml$",
+        "regex": true
+      }
+    },
+    {
+      "name": "destinationDirectory",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "/eniq/data/pmdata_sim/eniq_oss_1/topology_ran/"
+      }
+    }
+  ]
+}

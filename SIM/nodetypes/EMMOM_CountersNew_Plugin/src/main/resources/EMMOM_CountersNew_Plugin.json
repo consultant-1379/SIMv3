@@ -1,0 +1,57 @@
+{
+  "name": "EMMOM_CountersNew_Plugin",
+  "internal": true,
+  "baseType": "SftpAppender",
+  "properties": [
+    {
+      "name": "sftpKeyFile",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": ""
+      }
+    },
+    {
+      "name": "remoteDirectory",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "/var/opt/mediation/MMStorage/Manager/statistics"
+      }
+    },
+    {
+      "name": "namePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "counters_.*[0-9]\\.log",
+        "regex": true
+      }
+    },
+    {
+      "name": "renamePattern",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "%IP_ADDRESS%-%HASH_CODE%_%R_FILE_NAME%",
+        "regex": false
+      }
+    },
+    {
+      "name": "destinationDirectory",
+      "required": false,
+      "type": {
+        "type": "string",
+        "defaultString": "/eniq/data/pmdata_sim/eniq_oss_1/dc_e_emm_om_counters_new/1/"
+      }
+    },
+    {
+      "name": "localCleanup",
+      "required": false,
+      "type": {
+        "type": "boolean",
+        "defaultString": "false"
+      }
+    }
+  ]
+}
